@@ -1,0 +1,18 @@
+carro			  /modelo montadora seguro 	
+modelo			/montadora				                      guilherme
+montadora		/basico
+
+
+situações atuais dos carros	    /carro seguro
+espeficicação no tipo de carro	/carro modelo 			gabriel
+cliente				                  /basico
+
+
+planos diarios			/carro cliente
+planos semanais			/carro cliente			jheisson
+planos mensais			/carro cliente
+
+
+regiao				/basico
+seguro				/basico				heiagner
+vendedor			/regiao
