@@ -1,34 +1,22 @@
-const montadoras = require("./montadoras.js");
-const cores = require("./cores.js");
-const seguros = require("./seguros.js")
-const tipos = require("./tipoCarro.js")
+const regioes = require("./regioes.js");
 
 const db = [
   {
     id:"1",
-    montadora:"1",
-    nome:"Uno",
-    cor:"1",
-    tipo:"1",
-    seguro:"1"
+    nome:"Thiago",
+    regiao:"1"
   }];
 
 let proxId = 1;
 
 const model = (body, id = proxId++) => {
   if (body.nome != "" && body.nome != undefined &&
-      body.montadora_id != undefined && montadoras.show(body.montadora_id) &&
-      body.cor_id != "" && body.cor_id != undefined && cores.show(body.cor_id) &&
-      body.seguro_id != "" && body.seguro_id != undefined && seguros.show(body.seguro_id) &&
-      body.tipo_id != "" && body.tipo_id != undefined && tipos.show(body.tipo_id)
+      body.regiao_id != undefined && regioes.show(body.regiao_id)
       ) {
     return {
       id: id,
       nome: body.nome,
-      montadora: body.montadora_id,
-      cor: body.cor_id,
-      seguro: seguro_id,
-      tipo: body.tipo_id
+      regiao:regiao_id
     };
   }
 };

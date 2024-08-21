@@ -1,3 +1,4 @@
+
 let db = [{id: 1, tipo: "luxo"}]
 let nextId = 2
 const tipoCarro = {
@@ -18,6 +19,7 @@ const tipoCarro = {
     },
     showAll: () => { return db },
 
+
     show: (ql) => {
         let buscar = db.find(el => el.id == ql)
         if(buscar){ return 200
@@ -25,6 +27,7 @@ const tipoCarro = {
             return 418;
         }
     },
+
 
     update: (qlID, body) => {
         let bscID = db.findIndex(el => el.id == qlID)
@@ -46,4 +49,9 @@ const tipoCarro = {
             return 400
         }
     },
-}
+
+};
+
+module.exports = tipoCarro;
+
+
