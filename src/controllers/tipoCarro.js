@@ -1,5 +1,5 @@
-let db = []
-let nextId = 0
+let db = [{id: 1, tipo: "luxo"}]
+let nextId = 2
 const tipoCarro = {
     model:(body, id = nextId++)=>{
         if(body.nome != "" && body.nome != undefined){
