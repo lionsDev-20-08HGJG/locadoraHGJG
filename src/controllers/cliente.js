@@ -1,6 +1,5 @@
-
-let db = []
-let nextID = 1
+let db = [{id:1, nome:"jhonathan"}]
+let nextID = 2
 
 const cliente = {
     model: (body, id = nextID++) => {
