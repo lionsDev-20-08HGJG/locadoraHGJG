@@ -51,3 +51,4 @@ const situacaoCarro = {
         }
     },
 }
+module.exports = situacaoCarro
