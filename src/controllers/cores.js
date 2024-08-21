@@ -1,4 +1,9 @@
-const db = [];
+const db = [
+  {
+    nome:"Vermelho",
+    id:"1"
+  }
+];
 
 let proxId = 1;
 

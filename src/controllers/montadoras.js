@@ -1,4 +1,9 @@
-const db = [];
+const db = [
+  {
+    nome:"Fiat",
+    id:"1"
+  }
+];
 
 let proxId = 1;
 
