@@ -4,7 +4,9 @@ let proxId = 1
 const situacaoCarro = {
     model: (body, id = nextID++) => {
         if(body.carro_id != "" && body.carro_id != undefined){
-                return {id, carro: body.carro_id}
+                if(carro.show(body.carro_id)){
+                    return {id, carro: body.carro_id}
+                }
             }
             return undefined
     },
