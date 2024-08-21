@@ -1,0 +1,18 @@
+cor			        /basico
+modelo			    /montadora	cor seguro  espf.                  guilherme
+montadora		    /basico
+
+
+situações atuais dos carros	    /modelo
+espeficicação no tipo de carro  /basico 			gabriel
+cliente				            /basico
+
+
+planos diarios			/modelo cliente
+planos semanais			/modelo cliente			jheisson
+planos mensais			/modelo cliente
+
+
+regiao				/basico
+seguro				/basico				heiagner
+vendedor			/regiao

@@ -1,15 +1,18 @@
-
-let db = [{id: 1, tipo: "luxo"}]
-let nextId = 2
-const tipoCarro = {
-    model:(body, id = nextId++)=>{
-        if(body.nome != "" && body.nome != undefined){
-            return {id, nome: body.nome}
-        }
-        return undefined
+const carro = require("./controllers/modelos.js")
+let db=[{id: 1, carro_id: 1}]
+let nextID = 2
+const situacaoCarro = {
+    model: (body, id = nextID++) => {
+        if(body.carro_id != "" && body.carro_id != undefined){
+                if(carro.show(body.carro_id)){
+                    return {id, carro: body.carro_id}
+                }
+            }
+            return undefined
     },
+    
     store: (body) => {
-        let novo = cliente.model(body)
+        let novo = situacaoCarro.model(body)
         if(novo){ 
             db.push(novo)
             return 201;
@@ -19,7 +22,6 @@ const tipoCarro = {
     },
     showAll: () => { return db },
 
-
     show: (ql) => {
         let buscar = db.find(el => el.id == ql)
         if(buscar){ return 200
@@ -28,10 +30,9 @@ const tipoCarro = {
         }
     },
 
-
     update: (qlID, body) => {
         let bscID = db.findIndex(el => el.id == qlID)
-        let novoBody = cliente.model(body, parseInt(qlID))
+        let novoBody = situacaoCarro.model(body, parseInt(qlID))
         if(novoBody && bscID != (-1)){
             db[bscID] = novoBody
             return 201;
@@ -49,9 +50,4 @@ const tipoCarro = {
             return 400
         }
     },
-
-};
-
-module.exports = tipoCarro;
-
-
+}

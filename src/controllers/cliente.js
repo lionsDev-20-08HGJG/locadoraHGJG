@@ -1,13 +1,14 @@
+let db = [{id:1, nome:"jhonathan"}]
+let nextID = 2
 
-let db = [{id: 1, tipo: "luxo"}]
-let nextId = 2
-const tipoCarro = {
-    model:(body, id = nextId++)=>{
-        if(body.nome != "" && body.nome != undefined){
+const cliente = {
+    model: (body, id = nextID++) => {
+    if(body.nome != "" && body.nome != undefined){
             return {id, nome: body.nome}
         }
         return undefined
     },
+
     store: (body) => {
         let novo = cliente.model(body)
         if(novo){ 
@@ -19,7 +20,6 @@ const tipoCarro = {
     },
     showAll: () => { return db },
 
-
     show: (ql) => {
         let buscar = db.find(el => el.id == ql)
         if(buscar){ return 200
@@ -27,7 +27,6 @@ const tipoCarro = {
             return 418;
         }
     },
-
 
     update: (qlID, body) => {
         let bscID = db.findIndex(el => el.id == qlID)
@@ -49,9 +48,5 @@ const tipoCarro = {
             return 400
         }
     },
-
-};
-
-module.exports = tipoCarro;
-
-
+}
+module.exports =  cliente
