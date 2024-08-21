@@ -4,7 +4,7 @@ const db = [
   {
     id:"1",
     nome:"Thiago",
-    regiao:"Ponta Grossa"
+    regiao:"1"
   }];
 
 let proxId = 1;

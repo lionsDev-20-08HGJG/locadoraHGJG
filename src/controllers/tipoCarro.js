@@ -1,14 +1,18 @@
 let db = [
     {
+        id:"1",
         nome:"Luxo",
-        id:"1"
+        multiplicador:"3"
     }
 ]
 let nextId = 0
 const tipoCarro = {
     model:(body, id = nextId)=>{
-        if(body.nome != "" && body.nome != undefined){
-            return {id, nome: body.nome}
+        if(body.nome != "" && body.nome != undefined &&
+        body.multiplicador != "" && body.multiplicador != undefined && 
+        body.multiplicador > 0) 
+        {
+            return {id, nome: body.nome,multiplicador: body.multiplicador}
         }
         return undefined
     },
