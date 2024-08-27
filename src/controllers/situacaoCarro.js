@@ -1,13 +1,16 @@
-const carro = require("./controllers/modelos.js")
-let db=[{id: 1, carro_id: 1}]
+const carro = require("./modelos.js")
+let db=[{id: 1, carro_id: '1', situacao:'disponivel'}]
 let nextID = 2
 const situacaoCarro = {
     model: (body, id = nextID++) => {
-        if(body.carro_id != "" && body.carro_id != undefined){
-                if(carro.show(body.carro_id)){
-                    return {id, carro: body.carro_id}
+        if(body.carro_id != "" && body.carro_id != undefined &&carro.show(body.carro_id)&&
+            body.situacao!= "" && body.situacao != undefined){
+                    return {id, 
+                            carro: body.carro_id, 
+                            situacao:body.situacao
+                            }
                 }
-            }
+            
             return undefined
     },
     

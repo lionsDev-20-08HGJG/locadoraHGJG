@@ -3,18 +3,17 @@ const montadoras = require("./controllers/montadoras.js");
 const modelos = require("./controllers/modelos.js");
 const cores = require("./controllers/cores.js");
 
-const situacoes = require("./controllers/situacoes")
-const tipos = require("/controllers/tipos")
-const clientes = require("/controllers/clientes")
+const situacoes = require("./controllers/situacaoCarro.js")
+const tipos = require("./controllers/tipoCarro.js")
+const clientes = require("./controllers/clientes.js")
 
-const planosDia = require("/controllers/planosDia")
-const planosSem = require("/controllers/planosSem")
-const planosMen = require("/controllers/planosMen")
+const planos = require("./controllers/planos.js")
+const contratos = require("./controllers/contratos.js")
+const filiais = require("./controllers/filiais.js")
 
-
-const regioes = require("/controllers/regioes")
+const regioes = require("./controllers/regioes.js")
 const seguros = require("./controllers/seguros.js")
-const vendedores = require("/controllers/vendedores")
+const vendedores = require("./controllers/vendedores.js")
 
 const app = express();
 const port = 3000;
@@ -144,7 +143,7 @@ app.delete("/tipo", (req, res) => {
 })
 
 app.get("/cliente", (req, res) => {
-    res.json(clientes.index());
+    res.json(clientes.showAll());
 })
 
 app.get("/cliente/:id", (req, res) => {
@@ -167,76 +166,76 @@ app.delete("/cliente", (req, res) => {
     res.status(code).json();
 })
 
-app.get("/planosDia", (req, res) => {
-    res.json(planosDia.index());
+app.get("/planos", (req, res) => {
+    res.json(planos.showAll());
 })
 
-app.get("/planosDia/:id", (req, res) => {
-    const content = planosDia.show(req.params.id)
+app.get("/planos/:id", (req, res) => {
+    const content = planos.show(req.params.id)
     res.json(content)
 })
 
-app.post("/planosDia", (req, res) => {
-    const code = planosDia.store(req.body)
+app.post("/planos", (req, res) => {
+    const code = planos.store(req.body)
     res.status(code).json(); 
 })
 
-app.put("/planosDia", (req, res) => {
-    const code = planosDia.update(req.params.id, req.body)
+app.put("/planos", (req, res) => {
+    const code = planos.update(req.params.id, req.body)
     res.status(code).json()
 })
 
-app.delete("/planosDia", (req, res) => {
-    const code = planosDia.destroy(req.params.id)
+app.delete("/planos", (req, res) => {
+    const code = planos.destroy(req.params.id)
     res.status(code).json();
 })
 
-app.get("/planosSem", (req, res) => {
-    res.json(planosSem.index());
+app.get("/contrato", (req, res) => {
+    res.json(contratos.index());
 })
 
-app.get("/planosSem/:id", (req, res) => {
-    const content = planosSem.show(req.params.id)
+app.get("/contrato/:id", (req, res) => {
+    const content = contratos.show(req.params.id)
     res.json(content)
 })
 
-app.post("/planosSem", (req, res) => {
-    const code = planosSem.store(req.body)
+app.post("/contrato", (req, res) => {
+    const code = contratos.store(req.body)
     res.status(code).json(); 
 })
 
-app.put("/planosSem", (req, res) => {
-    const code = planosSem.update(req.params.id, req.body)
+app.put("/contrato", (req, res) => {
+    const code = contratos.update(req.params.id, req.body)
     res.status(code).json()
 })
 
-app.delete("/planosSem", (req, res) => {
-    const code = planosSem.destroy(req.params.id)
+app.delete("/contrato", (req, res) => {
+    const code = contratos.destroy(req.params.id)
     res.status(code).json();
 })
 
-app.get("/planosMen", (req, res) => {
-    res.json(planosMen.index());
+app.get("/filiais", (req, res)=>{
+    res.json(filiais.index())
 })
 
-app.get("/planosMen/:id", (req, res) => {
-    const content = planosMen.show(req.params.id)
+app.get("/filiais/:id", (req, res) =>{
+    const content = filiais.show(req.params.id)
     res.json(content)
 })
 
-app.post("/planosMen", (req, res) => {
-    const code = planosMen.store(req.body)
-    res.status(code).json(); 
-})
-
-app.put("/planosMen", (req, res) => {
-    const code = planosMen.update(req.params.id, req.body)
+app.post("/filiais", (req, res)=>{
+    const code = filiais.store(req.body)
     res.status(code).json()
 })
 
-app.delete("/planosMen", (req, res) => {
-    const code = planosMen.destroy(req.params.id)
-    res.status(code).json();
+app.put("/filiais/:id", (req,res)=>{
+    const code = filiais.update(req.params.id, req.body)
+    res.status(code).json()
+})
+
+app.delete("/filiais/:id", (req, res)=>{
+    const code = filiais.destroy(req.params.id)
+    res.status(code).json()
 })
 
 app.get("/regiao", (req, res) => {

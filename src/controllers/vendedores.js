@@ -1,22 +1,22 @@
-const regioes = require("./regioes.js");
+const regioes = require("./filiais.js");
 
 const db = [
   {
     id:"1",
     nome:"Thiago",
-    regiao:"1"
+    filiais:"1"
   }];
 
-let proxId = 1;
+let proxId = 2;
 
 const model = (body, id = proxId++) => {
   if (body.nome != "" && body.nome != undefined &&
-      body.regiao_id != undefined && regioes.show(body.regiao_id)
+      body.filial_id != undefined && filiais.show(body.filial_id)
       ) {
     return {
       id: id,
       nome: body.nome,
-      regiao:regiao_id
+      filial:filial_id
     };
   }
 };
