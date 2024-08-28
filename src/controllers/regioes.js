@@ -5,7 +5,7 @@ const db = [
     }
   ];
   
-  let proxId = 1;
+  let proxId = 2;
   
   const model = (body, id = proxId++) => {
     if (body.nome != "" && body.nome != undefined) {

@@ -1,6 +1,7 @@
 let db = [{id:1, nome:"jhonathan"}]
 let nextID = 2
 
+
 const cliente = {
     model: (body, id = nextID++) => {
     if(body.nome != "" && body.nome != undefined){
@@ -49,4 +50,4 @@ const cliente = {
         }
     },
 }
-module.exports =  cliente
+module.exports = cliente

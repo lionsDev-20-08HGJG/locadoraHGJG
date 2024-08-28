@@ -1,10 +1,10 @@
 
-let db = [{id: 1, tipo: "luxo"}]
+let db = [{id: 1, tipo: "luxo", multiplicador: "2"}]
 let nextId = 2
 const tipoCarro = {
     model:(body, id = nextId++)=>{
         if(body.nome != "" && body.nome != undefined){
-            return {id, nome: body.nome}
+            return {id, nome: body.nome, multiplicador: body.multiplicador}
         }
         return undefined
     },
